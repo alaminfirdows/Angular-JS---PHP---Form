@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Take Off Programming Contest by DIU CPC PC - Registration</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="styles/angular-material.min.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="fonts/iconfont/material-icons.css">
+
+  <meta property="og:url" content="http://takeoff.diucpc-pc.club/index.html" />
+  <meta property="og:type"  content="article" />
+  <meta property="og:title" content="Take Off Programming Contest by DIU CPC PC" />
+  <meta property="og:description" content="Take Off Programming Contest by DIU CPC PC - Registration" />
+  <meta property="og:image" content="http://takeoff.diucpc-pc.club/images/og.PNG" />
+  <meta property="og:locale" content="bn_BD" />
+  <meta property="og:site_name" content="DIU CPC PC" />
+  <meta property="fb:app_id" content="157257711483979" />
+  <link rel="shortcut icon" href="http://www.craftech.com/wp-uploads/2015/05/web1.png">
+</head>
+
+<body ng-app="takeoff_registration" ng-cloak>
+  <md-toolbar class="md-info">
+    <h2 class="md-toolbar-tools">
+      <span hide-xs>Take Off Programming Contest by DIU CPC PC - Registration</span>
+      <span hide-gt-xs>Registration for Take Off</span>
+    </h2>
+  </md-toolbar>
+
+  <md-content ng-controller="registration_form_controller" class="md-padding" layout-xs="column" layout="row">
+
+    <md-card class="_md">
+      <md-card-content>
+        <form action="" method="POST" name="registration_form">
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Name</label>
+              <input type="text" name="name" ng-model="user.name" required md-maxlength="30">
+              <div ng-messages="registration_form.name.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must input your name.</div>
+                <div ng-message="md-maxlength" class="my-message">Your name can't larger than 30 char.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Student ID</label>
+              <input type="text" name="student_id" ng-model="user.student_id" ng-pattern="/^.+\-+.+\-+./"  required md-maxlength="11">
+              <div ng-messages="registration_form.student_id.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must input your ID.</div>
+                <div ng-message="pattern" class="my-message">You ID should like as xxx-xx-xxxx.</div>
+                <div ng-message="md-maxlength" class="my-message">Your ID can't larger than 11 char.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>DIU Email</label>
+              <input type="email" name="email" ng-model="user.email" ng-pattern="/^.+@diu+\.+edu+\.+bd/" required md-maxlength="30">
+              <div ng-messages="registration_form.email.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must input your DIU email.</div>
+                <div ng-message="pattern" class="my-message">You email should like as example@diu.edu.bd</div>
+                <div ng-message="md-maxlength" class="my-message">Your email can't larger than 30 char.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Phone</label>
+              <input type="texy" name="phone" ng-model="user.phone" ng-pattern="/^[0-9]{11}$/" required md-maxlength="11">
+              <div ng-messages="registration_form.phone.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must input your phone.</div>
+                <div ng-message="pattern" class="my-message">You must input a valid phone number.</div>
+                <div ng-message="md-maxlength" class="my-message">Your phone can't larger than 11 char.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Department</label>
+              <md-select name="department" ng-model="user.department" required>
+                <md-option value="CSE">CSE</md-option>
+                <md-option value="SWE">SWE</md-option>
+                <md-option value="Others">Others</md-option>
+              </md-select>
+              <div class="md-errors-spacer"></div>
+              <div ng-messages="registration_form.department.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must select your department.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Semester</label>
+              <md-select name="semester" ng-model="user.semester" required>
+                <md-option value="1st">1st</md-option>
+                <md-option value="2nd">2nd</md-option>
+              </md-select>
+              <div class="md-errors-spacer"></div>
+              <div ng-messages="registration_form.semester.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must select your semester.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block md-primary"  flex-gt-sm>
+              <label>T-Shirt Size</label>
+              <md-select name="tshirt_size" ng-model="user.tshirt_size" required>
+                <md-option value="M">M</md-option>
+                <md-option value="L">L</md-option>
+                <md-option value="X">X</md-option>
+                <md-option value="XL">XL</md-option>
+                <md-option value="XXL">XXL</md-option>
+              </md-select>
+              <div class="md-errors-spacer"></div>
+              <div ng-messages="registration_form.tshirt_size.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must select your T-Shirt Size.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block md-primary">
+              <md-checkbox  class="md-accent" name="terms" ng-model="terms" required>I'm agree to participate DIU Take Off Programming contest and willing to pay TK 300 (Three Hundred) as registration fee.</md-checkbox>
+            </md-input-container>
+          </div>
+
+          <md-button ng-disabled="!user.name || !user.student_id || !user.email || !user.phone || !user.department || !user.semester || !user.tshirt_size || !terms" style="float: right;" type="button" name="submit" class="md-primary md-raised" ng-click="save_data()">Submit</md-button>
+        </form>
+
+      </md-card>
+    </md-content>
+      <p align="center" style="margin-bottom: 15px">Developed by Al-Amin Firdows & Powered by DeVerse!</p>
+    </md-footer>
+
+  <script src="scripts/angular.min.js"></script>
+  <script src="scripts/angular-animate.min.js"></script>
+  <script src="scripts/angular-aria.min.js"></script>
+  <script src="scripts/angular-messages.min.js"></script>
+  <script src="scripts/angular-material.min.js"></script>
+  
+  <script src="scripts/app.js"></script>
+  <!-- <script src="scripts/save_to_docs.js"></script> -->
+  
+</body>
+
+</html>

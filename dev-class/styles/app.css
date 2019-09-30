@@ -1,0 +1,57 @@
+html {
+  background: #eee;
+}
+
+body {
+  line-height: 1.4;
+  max-width: 100%;
+  margin: 0px auto;
+}
+
+	md-card._md {
+  width: 100%;
+  margin: 0 auto;
+}
+.checkbox-item-50 {
+    display: inline-block;
+    width: 100%;
+}
+.checkbox-item-100 {
+    display: inline-block;
+    width: 100%;
+}
+
+.hide-on-l {
+  display: block;
+}
+.hide-on-s {
+  display: none;
+}
+@media (min-width: 500px) {
+    md-card._md {
+    width: 600px;
+  }
+  .checkbox-item-50 {
+    display: inline-block;
+    width: 45%;
+  }
+  .hide-on-l {
+    display: none;
+  }
+  .hide-on-s {
+    display: block;
+  }
+  a.terms-link {
+    text-decoration: none;
+  }
+
+}
+
+md-toast.md-success-theme .md-toast-content {
+    background-color: green;
+    position: fixed;
+}
+md-toast.md-error-theme .md-toast-content {
+    background-color: red;
+    position: fixed;
+}

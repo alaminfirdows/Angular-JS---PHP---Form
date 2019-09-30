@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Development Training by DIU CPC PC - Registration</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="styles/angular-material.min.css">
+  <link rel="stylesheet" href="styles/app.css">
+
+  <meta property="og:url" content="https://goo.gl/EA3F3N" />
+  <meta property="og:type"  content="article" />
+  <meta property="og:title" content="Development Training by DIU CPC PC - Registration" />
+  <meta property="og:description" content="Development Training by DIU CPC PC - Registration" />
+  <meta property="og:image" content="https://goo.gl/EA3F3N/images/og.PNG" />
+  <meta property="og:locale" content="bn_BD" />
+  <meta property="og:site_name" content="DIU CPC PC" />
+  <meta property="fb:app_id" content="157257711483979" />
+  <link rel="shortcut icon" href="https://goo.gl/EA3F3N/icon.png">
+</head>
+
+<body ng-app="cpc_class_registration" ng-cloak>
+  <md-toolbar class="md-info">
+    <h2 class="md-toolbar-tools">
+      <span hide-xs>Development Training Class by DIU CPC PC - Registration</span>
+      <span hide-gt-xs>Registration for Training Class</span>
+    </h2>
+  </md-toolbar>
+
+  <md-content ng-controller="registration_form_controller" class="md-padding" layout-xs="column" layout="row">
+    <md-card class="_md">
+      <md-card-content>
+        <form action="" method="POST" name="registration_form">
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Name</label>
+              <input type="text" name="name" ng-model="user.name" required md-maxlength="30">
+              <div ng-messages="registration_form.name.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must input your name.</div>
+                <div ng-message="md-maxlength" class="my-message">Your name can't larger than 30 char.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Student ID</label>
+              <input type="text" name="student_id" ng-model="user.student_id" ng-pattern="/^.+\-+.+\-+./"  required md-maxlength="11">
+              <div ng-messages="registration_form.student_id.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must input your ID.</div>
+                <div ng-message="pattern" class="my-message">You ID should like as xxx-xx-xxxx.</div>
+                <div ng-message="md-maxlength" class="my-message">Your ID can't larger than 11 char.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>DIU Email</label>
+              <input type="email" name="email" ng-model="user.email" ng-pattern="/^.+@diu+\.+edu+\.+bd/" required md-maxlength="30">
+              <div ng-messages="registration_form.email.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must input your DIU email.</div>
+                <div ng-message="pattern" class="my-message">You email should like as example@diu.edu.bd</div>
+                <div ng-message="md-maxlength" class="my-message">Your email can't larger than 30 char.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Phone</label>
+              <input type="texy" name="phone" ng-model="user.phone" ng-pattern="/^[0-9]{11}$/" required md-maxlength="11">
+              <div ng-messages="registration_form.phone.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must input your phone.</div>
+                <div ng-message="pattern" class="my-message">You must input a valid phone number.</div>
+                <div ng-message="md-maxlength" class="my-message">Your phone can't larger than 11 char.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Department</label>
+              <md-select name="department" ng-model="user.department" required>
+                <md-option value="cse">CSE</md-option>
+                <md-option value="swe">SWE</md-option>
+              </md-select>
+              <div class="md-errors-spacer"></div>
+              <div ng-messages="registration_form.department.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must select your department.</div>
+              </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Semester</label>
+              <md-select name="semester" ng-model="user.semester" required>
+                <md-option value="1st" disabled>1st</md-option>
+                <md-option value="2nd" disabled>2nd</md-option>
+                <md-option value="3rd">3rd</md-option>
+                <md-option value="4th">4th</md-option>
+                <md-option value="5th">5th</md-option>
+                <md-option value="6th">6th</md-option>
+                <md-option value="7th">7th</md-option>
+                <md-option value="8th">8th</md-option>
+                <md-option value="9th">9th</md-option>
+                <md-option value="10th">10th</md-option>
+                <md-option value="11th">11th</md-option>
+                <md-option value="12th">12th</md-option>
+              </md-select>
+              <div class="md-errors-spacer"></div>
+              <div ng-messages="registration_form.semester.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must select your semester.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Choose Course</label>
+              <md-select name="course" ng-model="user.course" required>
+                <md-option value="web_dev">Web Development</md-option>
+                <md-option value="android">Android Development</md-option>
+              </md-select>
+              <div class="md-errors-spacer"></div>
+              <div ng-messages="registration_form.course.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">You must select a course.</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div ng-if="user.course === 'web_dev'">
+            <label>When you are free for class?</label>
+            <div class="my-message" style="font-size: 14px; color: red;">Select at least two schedule from your free time when you want to class.</div>
+            <md-input-container class="md-block">
+              <md-checkbox class="checkbox-item-100 md-primary" ng-disabled="true" ng-model="true">SAT (2.30 PM to 4.00 PM)</md-checkbox>
+              <md-checkbox class="checkbox-item-100 md-primary" name="user.dev_time_sun" ng-model="user.dev_time_sun"  ng-true-value="1" ng-false-value="0">SUN (4.00 PM to 5.30 PM)</md-checkbox>
+              <md-checkbox class="checkbox-item-100 md-primary" name="user.dev_time_mon" ng-model="user.dev_time_mon"  ng-true-value="1" ng-false-value="0">MON (4.00 PM to 5.30 PM)</md-checkbox>
+              <md-checkbox class="checkbox-item-100 md-primary" name="user.dev_time_tue" ng-model="user.dev_time_tue"  ng-true-value="1" ng-false-value="0">TUE (4.00 PM to 5.30 PM)</md-checkbox>
+              <md-checkbox class="checkbox-item-100 md-primary" name="user.dev_time_wed" ng-model="user.dev_time_wed"  ng-true-value="1" ng-false-value="0">WED (4.00 PM to 5.30 PM)</md-checkbox>
+            </md-input-container>
+          </div>
+
+          <label>Select Your Skill:</label>
+          <md-input-container class="md-block">
+            <md-checkbox class="checkbox-item-50 md-primary" name="skill_html" ng-model="user.skill_html"  ng-true-value="1" ng-false-value="0">HTML</md-checkbox>
+            <md-checkbox class="checkbox-item-50 md-primary" name="skill_css" ng-model="user.skill_css"  ng-true-value="1" ng-false-value="0">CSS</md-checkbox>
+            <md-checkbox class="checkbox-item-50 md-primary" name="skill_js" ng-model="user.skill_js"  ng-true-value="1" ng-false-value="0">JavaScript</md-checkbox>
+            <md-checkbox class="checkbox-item-50 md-primary" name="skill_c" ng-model="user.skill_c"  ng-true-value="1" ng-false-value="0">C</md-checkbox>
+            <md-checkbox class="checkbox-item-50 md-primary" name="skill_cpp" ng-model="user.skill_cpp"  ng-true-value="1" ng-false-value="0">C++</md-checkbox>
+            <md-checkbox class="checkbox-item-50 md-primary" name="skill_java" ng-model="user.skill_java"  ng-true-value="1" ng-false-value="0">Java</md-checkbox>
+            <md-checkbox class="checkbox-item-50 md-primary" name="skill_php" ng-model="user.skill_php"  ng-true-value="1" ng-false-value="0">PHP</md-checkbox>
+            <md-checkbox class="checkbox-item-50 md-primary" name="skill_python" ng-model="user.skill_python" ng-true-value="1" ng-false-value="0">Python</md-checkbox>
+          </md-input-container>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Why you want to learn this course?</label>
+              <textarea ng-model="user.why_learn" md-maxlength="500" rows="3"></textarea>
+            </md-input-container>
+          </div>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block md-primary">
+              <md-checkbox  class="md-accent" name="terms" ng-model="terms" required>I am agree to pay</md-checkbox><a href="a" target="_blank" class="terms-link"> Fee for this course.</a>
+            </md-input-container>
+          </div>
+
+          <md-button ng-disabled="!user.name || !user.student_id || !user.email || !user.phone || !user.department || !user.semester || !user.course || !terms" style="float: right;" type="button" name="submit" class="md-primary md-raised" ng-click="save_data()">Submit</md-button>
+        </form>
+      </md-card-content>
+    </md-card>
+  </md-content>
+
+  <md-footer>
+    <p align="center" style="margin-bottom: 20px">Developed by Al-Amin Firdows & Powered by DeVerse!</p>
+  </md-footer>
+
+  <script src="scripts/angular.min.js"></script>
+  <script src="scripts/angular-animate.min.js"></script>
+  <script src="scripts/angular-aria.min.js"></script>
+  <script src="scripts/angular-messages.min.js"></script>
+  <script src="scripts/angular-material.min.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
